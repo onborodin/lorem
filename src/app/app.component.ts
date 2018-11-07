@@ -43,11 +43,12 @@ export class AppComponent {
                             this.topRate += 1
                             elem.state = 'busy'
                             elem.stateDesc = 'занят'
-                            elem.rate += 2
+                            elem.rate += 4
                         }
                         else if (elem.state === 'busy') {
                             elem.state = 'free'
                             elem.stateDesc = 'свободен'
+                            elem.rate += 2
                         }
                     }
             });

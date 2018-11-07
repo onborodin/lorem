@@ -1,4 +1,5 @@
-<h4>{{ header }}</h4>
+
+<h5>{{ header }}</h5>
 
 {{ message }}
 
@@ -17,7 +18,7 @@
             <td [ngStyle]="setStyle(i)" >{{ item.name  }}</td>
             <td>{{ item.rate / 2}}</td>
             <td>
-                <button (click)="upRate(item)" [ngClass]="setButton(item)">{{ item.state }}</button>
+                <button (click)="upRate(item)" [ngClass]="setButton(item)">{{ item.stateDesc }}</button>
             </td>
         </tr>
     </tbody>
