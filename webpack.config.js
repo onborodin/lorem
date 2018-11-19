@@ -84,6 +84,14 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.ts?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
+            },
+            {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',
