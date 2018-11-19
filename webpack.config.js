@@ -22,8 +22,8 @@ const jsDir = outputDir
 const cssDir = outputDir
 
 module.exports = {
-    //mode: 'production',
-    mode: 'development',
+    mode: 'production',
+    //mode: 'development',
     entry: entryFile,
     cache: true,
     devtool: 'source-map',
@@ -62,9 +62,10 @@ module.exports = {
         warnings: true,
     },
     resolve: {
-        extensions: ['.js', '.vue'],
+        extensions: ['.js', '.vue', '.ts'],
         alias: {
-            'vue$': 'vue/dist/vue.common.js',
+            //'vue$': 'vue/dist/vue.common.js',
+            'vue$': 'vue/dist/vue.esm.js',
             '@': srcDir
         }
     },
@@ -116,6 +117,7 @@ module.exports = {
         ]
     },
     devServer: {
+        historyApiFallback: true,
         contentBase: [outputDir],
         index: 'index.html',
         compress: true,
@@ -124,13 +126,43 @@ module.exports = {
         watchOptions: {
             ignored: /node_modules/
         },
-        inline: true
+        inline: true,
+        stats: {
+            assets: true,
+            builtAt: false,
+            cached: false,
+            cachedAssets: false,
+            children: false,
+            chunkGroups: false,
+            chunkModules: false,
+            chunkOrigins: false,
+            chunks: false,
+            colors: true,
+            depth: false,
+            entrypoints: false,
+            env: false,
+            errorDetails: false,
+            errors: false,
+            hash: false,
+            modules: false,
+            moduleTrace: true,
+            performance: false,
+            providedExports: false,
+            publicPath: false,
+            reasons: false,
+            source: false,
+            timings: false,
+            usedExports: false,
+            version: false,
+            warnings: true,
+        },
     },
     plugins: [
         new VueLoaderPlugin(),
-        new CopyWebpackPlugin(
-          [{ from: srcDir + '/assets', to: outputDir }],
-        ),
+        new CopyWebpackPlugin([{ 
+            from: srcDir + '/assets', 
+            to: outputDir 
+        }]),
         new HtmlWebpackPlugin({
             hash: false,
             filename: outputDir + '/index.html',
