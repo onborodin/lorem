@@ -1,18 +1,29 @@
-import {
-    Component
-} from '@angular/core';
-import {
-    DataRecord
-} from './data-record';
 
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+//import * as $ from 'jquery';
+//import * as foundation from 'foundation';
+
+declare var $ : any;
+
+
+class DataRecord {
+    constructor(
+        public id: number,
+        public name: string,
+        public rate: number,
+        public state: string,
+        public stateDesc: string,
+    ) { }
+}
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.scss']
 })
+export class AppComponent implements OnInit {
 
-export class AppComponent {
     header = 'Продавцы';
     message = '';
     topRate = 0
@@ -20,22 +31,28 @@ export class AppComponent {
     dataRecords = [
         new DataRecord(1, "Борис Рубекин", 0, 'free', 'свободен'),
         new DataRecord(2, "Андрей Светлов", 0, 'free', 'свободен'),
-        new DataRecord(3, "Олег Шавкунов", 0, 'free', 'свободен')
+        new DataRecord(3, "Олег Шавкунов", 0, 'free', 'свободен'),
+        new DataRecord(4, "Борис Гребенщиков", 0, 'free', 'свободен')
     ];
+
+    ngOnInit() {
+        $(document).foundation();
+        $("#app").foundation();
+        console.log('init');
+    }
 
     setStyle(index: number) : object {
         if (index == 0) return {'color' : 'red' }
         if (index == 1) return {'color' : 'green' }
-        console.log(index)
     }
 
-    setButton(item) {
+    setButton(item: DataRecord) : any {
         if (item.state === 'free') return ['button', 'success']
         if (item.state === 'busy') return ['button', 'warning']
         return ['button']
     }
 
-    upRate(item) {
+    upRate(item: DataRecord) : void {
             this.dataRecords.forEach((elem) => {
 
                     if (item.id === elem.id) {
@@ -48,7 +65,7 @@ export class AppComponent {
                         else if (elem.state === 'busy') {
                             elem.state = 'free'
                             elem.stateDesc = 'свободен'
-                            elem.rate += 2
+                            elem.rate -= 2
                         }
                     }
             });
@@ -64,4 +81,3 @@ export class AppComponent {
             });
     };
 }
-

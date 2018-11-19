@@ -2,7 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./public/js",
     "sourceMap": true,
     "declaration": false,
     "module": "es2015",

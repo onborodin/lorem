@@ -19,14 +19,22 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets/js",
-              "src/assets/css",
+                { "glob": "favicon.ico", "input": "src/assets", "output": "/" },
+                { "glob": "*", "input": "src/assets", "output": "/", "ignore": ["**/*~"] },
             ],
             "styles": [
-              "src/styles.css"
+                { "input": "src/styles.scss", "bundleName": "styles" },
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+                "includePaths": [
+                    "src/scss",
+                    "node_modules/foundation-sites/scss"
+                ]
+            },
+            "scripts": [
+                "node_modules/jquery/dist/jquery.js",
+                "node_modules/foundation-sites/dist/js/foundation.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -37,12 +45,12 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "none",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,
-              "extractLicenses": true,
+              "extractLicenses": false,
               "vendorChunk": false,
               "buildOptimizer": true,
               "budgets": [
@@ -71,26 +79,14 @@
           "options": {
             "browserTarget": "hello:build"
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-          }
         }
       }
-    },
+    }
   },
-  "defaultProject": "hello"
+  "defaultProject": "hello",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
