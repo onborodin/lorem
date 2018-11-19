@@ -1,11 +1,7 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-//import * as $ from 'jquery';
-//import * as foundation from 'foundation';
-
 declare var $ : any;
-
 
 class DataRecord {
     constructor(
@@ -18,11 +14,11 @@ class DataRecord {
 }
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    selector: 'seller',
+    templateUrl: './seller.component.html',
+    styleUrls: ['./seller.component.scss']
 })
-export class AppComponent implements OnInit {
+export class SellerComponent implements OnInit {
 
     header = 'Продавцы';
     message = '';
