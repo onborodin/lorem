@@ -11,7 +11,5 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         $(document).foundation();
-        $("#app").foundation();
     }
-
 }

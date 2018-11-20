@@ -11,7 +11,8 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          //"builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/",
             "index": "src/index.html",
@@ -20,7 +21,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
                 { "glob": "favicon.ico", "input": "src/assets", "output": "/" },
-                { "glob": "*", "input": "src/assets", "output": "/", "ignore": ["**/*~"] },
+                { "glob": "fou*", "input": "src/assets", "output": "/" },
             ],
             "styles": [
                 { "input": "src/styles.scss", "bundleName": "styles" },
@@ -33,6 +34,7 @@
             },
             "scripts": [
                 "node_modules/jquery/dist/jquery.js",
+                "node_modules/what-input/dist/what-input.js",
                 "node_modules/foundation-sites/dist/js/foundation.js"
             ]
           },
