@@ -10,8 +10,6 @@ declare var $ : any;
 export class AppComponent implements OnInit {
 
     ngOnInit() {
-        $(document).foundation();
-        $("#app").foundation();
+        console.log('App mount')
     }
-
 }

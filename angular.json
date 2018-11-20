@@ -11,7 +11,8 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          //"builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/",
             "index": "src/index.html",
@@ -20,7 +21,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
                 { "glob": "favicon.ico", "input": "src/assets", "output": "/" },
-                { "glob": "*", "input": "src/assets", "output": "/", "ignore": ["**/*~"] },
+                { "glob": "fou*", "input": "src/assets", "output": "/" },
             ],
             "styles": [
                 { "input": "src/styles.scss", "bundleName": "styles" },
@@ -28,12 +29,24 @@
             "stylePreprocessorOptions": {
                 "includePaths": [
                     "src/scss",
-                    "node_modules/foundation-sites/scss"
+                    "node_modules/bootstrap/scss"
                 ]
             },
             "scripts": [
                 "node_modules/jquery/dist/jquery.js",
-                "node_modules/foundation-sites/dist/js/foundation.js"
+                "node_modules/what-input/dist/what-input.js",
+                "node_modules/bootstrap/js/dist/index.js",
+                "node_modules/bootstrap/js/dist/tooltip.js",
+                "node_modules/bootstrap/js/dist/collapse.js",
+                "node_modules/bootstrap/js/dist/popover.js",
+                "node_modules/bootstrap/js/dist/button.js",
+                "node_modules/bootstrap/js/dist/util.js",
+                "node_modules/bootstrap/js/dist/dropdown.js",
+                "node_modules/bootstrap/js/dist/tab.js",
+                "node_modules/bootstrap/js/dist/alert.js",
+                "node_modules/bootstrap/js/dist/carousel.js",
+                "node_modules/bootstrap/js/dist/modal.js",
+                "node_modules/bootstrap/js/dist/scrollspy.js",
             ]
           },
           "configurations": {
@@ -65,6 +78,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+
           "options": {
             "browserTarget": "hello:build"
           },

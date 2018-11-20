@@ -32,9 +32,7 @@ export class SellerComponent implements OnInit {
     ];
 
     ngOnInit() {
-        $(document).foundation();
-        $("#app").foundation();
-        console.log('init');
+        console.log('Seller mount');
     }
 
     setStyle(index: number) : object {
@@ -43,8 +41,8 @@ export class SellerComponent implements OnInit {
     }
 
     setButton(item: DataRecord) : any {
-        if (item.state === 'free') return ['button', 'success']
-        if (item.state === 'busy') return ['button', 'warning']
+        if (item.state === 'free') return ['btm', 'btn-success']
+        if (item.state === 'busy') return ['btm', 'btn-warning']
         return ['button']
     }
 
