@@ -1,14 +1,13 @@
 <template>
-    <div id="page" class="margin-left-2 margin-right-2">
+    <div id="page" >
         <div class="top-bar-container" data-sticky-container>
             <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
 
                 <div class="top-bar">
                     <div class="top-bar-left">
                         <ul class="menu">
-                            <li class="menu-text"></i>Expresso</li>
-                            <li><router-link to="/users">Users</router-link></li>
-                            <li><router-link to="/lorem">Lorem</router-link></li>
+                            <li class="menu-text"><i class="menu-icon-2"></i>VuT</li>
+                            <li><router-link to="/stock">Stock</router-link></li>
                         </ul>
                     </div>
                 </div>
@@ -16,7 +15,9 @@
             </div>
         </div>
 
-        <router-view />
+        <div class="margin-left-2 margin-right-2">
+            <router-view />
+        </div>
 
         <div class="grid-container">
             <div class="grid-x grid-margin-x align-center">
@@ -31,15 +32,20 @@
     </div>
 </template>
 
-<script>
-import Users from '@/Users.vue'
-import NotFound from '@/NotFound.vue'
-import Lorem from '@/Lorem.vue'
+<script lang="ts">
+import Stock from './Stock.vue'
+import NotFound from './NotFound.vue'
 
-export default {
-    components: { Users, NotFound, Lorem }
+import { Vue, Component, Prop } from "vue-property-decorator"
+
+@Component({
+    components: { Stock, NotFound }
+})
+export default class App extends Vue {
+
 }
 </script>
+
 
 <style>
 html {

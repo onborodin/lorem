@@ -4,23 +4,25 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const state = function() {
+function state() : any {
     return {
     }
 }
 
-const mutations = {
+const mutations : any = {
 }
 
-const actions = {
+const actions : any = {
 }
 
-const getters = {
+const getters : any = {
 }
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
     state: state,
     actions: actions,
     mutations: mutations,
     getters: getters
 })
+
+export default store

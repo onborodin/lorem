@@ -11,19 +11,20 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin")
 const WriteFilePlugin = require('write-file-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const currentDir = path.resolve(__dirname)
 const srcDir = currentDir + '/src'
 
-const entryFile = srcDir + '/app.js'
+const entryFile = srcDir + '/app.ts'
 const outputDir = currentDir + '/dist'
 
 const jsDir = outputDir
 const cssDir = outputDir
 
 module.exports = {
-    mode: 'production',
-    //mode: 'development',
+    //mode: 'production',
+    mode: 'development',
     entry: entryFile,
     cache: true,
     devtool: 'source-map',
@@ -64,8 +65,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.ts'],
         alias: {
-            //'vue$': 'vue/dist/vue.common.js',
             'vue$': 'vue/dist/vue.esm.js',
+            'jquery': 'jquery/dist/jquery.slim.js',
             '@': srcDir
         }
     },
@@ -131,10 +132,11 @@ module.exports = {
         compress: true,
         port: 8100,
         open: true,
+        inline: true,
+        //watch: true,
         watchOptions: {
             ignored: /node_modules/
         },
-        inline: true,
         stats: {
             assets: true,
             builtAt: false,
@@ -177,11 +179,6 @@ module.exports = {
             template: srcDir + '/index.html',
             alwaysWriteToDisk: true
         }),
-        new webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery',
-            'window.jQuery': 'jquery',
-        }),
         new MiniCssExtractPlugin({
             filename: "app.css",
         }),
@@ -192,7 +189,8 @@ module.exports = {
              clearConsole: false
         }),
         new DuplicatePackageCheckerPlugin(),
-        new WriteFilePlugin()
+        new WriteFilePlugin(),
+        new CleanWebpackPlugin(outputDir)
     ],
     performance: {
         maxAssetSize: 1 * 1024 * 1024,

@@ -1,28 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Users from './Users.vue'
+import Stock from './Stock.vue'
 import NotFound from './NotFound.vue'
-import Lorem from './Lorem.vue'
 
 import store from './store'
 
 Vue.use(Router)
 
-var router = new Router({
+var router  = new Router({
     mode: 'history',
     routes: [
         {
             path: '/',
-            redirect: '/lorem'
+            redirect: '/stock'
         },
         {
-            path: '/users',
-            component: Users
-        },
-        {
-            path: '/lorem',
-            component: Lorem
+            path: '/stock',
+            component: Stock
         },
         {
             path: '*',
