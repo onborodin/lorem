@@ -1,14 +1,14 @@
 $topbar-background: $white;
 
+$my-menu-icon-color: #424242;
 
-.menu-icon-2 {
-    @include hamburger($color: black, $color-hover: $white);
-    margin-right: 0.5em;
+.my-menu-icon {
+    @include hamburger($color: $my-menu-icon-color, $color-hover: $my-menu-icon-color);
+    //margin-right: 0.5em;
+    margin-bottom: 0.2em;
 }
 
-
-
-$my-gray: #aaaaaa;
+$my-gray: #dadada;
 
 .top-bar {
     background-color: #efefff !important;
@@ -19,7 +19,6 @@ $my-gray: #aaaaaa;
 .top-bar ul {
     padding-left: 1em;
     padding-top: .3em;
-    //background-color: #efefff !important;
     background-color: inherit !important;
 }
 
@@ -34,5 +33,21 @@ thead tr {
 
 html {
     font-size: 90% !important;
+}
+
+.hamburger-light {
+    display: inline-block;
+    margin: 0.3em 0.3em 0.3em 0.3em; 
+    height: 1.3em;
+    width: 1.3em;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.hamburger-dark {
+    display: inline-block;
+    margin: 0.3em 0.3em 0.3em 0.3em; 
+    height: 1.3em;
+    width: 1.3em;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 

@@ -6,7 +6,8 @@
                 <div class="top-bar">
                     <div class="top-bar-left">
                         <ul class="menu">
-                            <li class="menu-text"><i class="menu-icon-2"></i>VuT</li>
+                            <li><a href="/"><i class="my-menu-icon"></i></a></li>
+                            <li class="menu-text">VuT</li>
                             <li><router-link to="/stock">Stock</router-link></li>
                         </ul>
                     </div>
@@ -14,6 +15,7 @@
 
             </div>
         </div>
+
 
         <div class="margin-left-2 margin-right-2">
             <router-view />
@@ -29,6 +31,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </template>
 

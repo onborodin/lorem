@@ -26,12 +26,12 @@ module.exports = {
     //mode: 'production',
     mode: 'development',
     entry: entryFile,
-    cache: true,
+    cache: false,
     devtool: 'source-map',
     output: {
         path: jsDir,
         publicPath: '/',
-        filename: 'app.js',
+        filename: 'app.[hash].js',
     },
     stats: {
         assets: true,
