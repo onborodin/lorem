@@ -1,38 +1,37 @@
 <template>
-    <div id="page" >
-        <div class="top-bar-container" data-sticky-container>
-            <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+    <div id="page">
+        <div class="navbar sticky-top navbar-expand-sm navbar-light bg-light mb-4 nav-justified">
+            <div class="navbar-text"><span class="navbar-toggler-icon"></span>NgII</div>
 
-                <div class="top-bar">
-                    <div class="top-bar-left">
-                        <ul class="menu">
-                            <li class="menu-text"><i class="menu-icon-2"></i>VuT</li>
-                            <li><router-link to="/stock">Stock</router-link></li>
-                        </ul>
-                    </div>
-                </div>
+                    <router-link class="nav-link" active-class="active" to="/stock">Stock</router-link>
 
-            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+
         </div>
 
-        <div class="margin-left-2 margin-right-2">
-            <router-view />
+        <div id="router">
+                <router-view />
         </div>
 
-        <div class="grid-container">
-            <div class="grid-x grid-margin-x align-center">
-                <div class="cell medium-10">
-                    <hr />
-                    <p class="text-center">
-                        <small>Made by <a href="http://wiki.unix7.org">Borodin Oleg</a></small>
-                    </p>
+
+        <div id="seller" class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-9 ">
+                    <hr/>
                 </div>
             </div>
         </div>
-    </div>
+
+</div>
+
 </template>
 
 <script lang="ts">
+
 import Stock from './Stock.vue'
 import NotFound from './NotFound.vue'
 

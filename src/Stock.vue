@@ -1,12 +1,13 @@
-
 <template>
 
-    <div id="lorem" class="grid-container">
-        <div class="grid-x grid-margin-x align-center">
-            <div class="cell medium-8">
+<div id="seller" class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-9 ">
+
+
 
                 <h5>Stock</h5>
-                <table>
+                <table class="table table-striped table-hover table-sm">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -24,7 +25,7 @@
                             <td>{{ item.name }}</td>
                             <td>{{ item.count }}</td>
                             <td>{{ item.cost }}</td>
-                            <td><a class="button small" v-on:click="addOrder(item, index)">to order</a></td>
+                            <td><button class="btn btn-primary" v-on:click="addOrder(item, index)">to order</button></td>
 
                         </tr>
                     </tbody>
@@ -34,7 +35,7 @@
 
                 <h5>Order</h5>
 
-                <table>
+                <table class="table  table-striped table-hover table-sm">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -59,16 +60,16 @@
                 </table>
                 <h5>Total price: {{ sum }}</h5>
 
-
             </div>
         </div>
-    </div>
+</div>
+
+
 </template>
 
 <script lang="ts">
 
 import { mapState, mapGetters, mapActions } from 'vuex'
-import foundation from './foundation'
 
 import { Vue, Component, Prop, Watch } from "vue-property-decorator"
 

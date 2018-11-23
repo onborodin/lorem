@@ -6,6 +6,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+//import custom from './custom'
+
 
 const app = new Vue({
     el: '#app',
@@ -17,6 +19,3 @@ const app = new Vue({
     components: { App }
 })
 
-import foundation from './foundation'
-
-foundation(document)

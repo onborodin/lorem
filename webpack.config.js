@@ -115,7 +115,7 @@ module.exports = {
                         options: {
                             includePaths: [
                                         srcDir + '/scss/',
-                                        currentDir + '/node_modules/foundation-sites/scss/',
+                                        currentDir + '/node_modules/bootstrap/scss/',
                             ],
                             outputStyle: 'compressed',
                             //outputStyle: 'nested',
