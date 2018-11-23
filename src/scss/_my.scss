@@ -1,13 +1,28 @@
 $topbar-background: $white;
 
+$my-gray: #aaaaaa;
+
 .top-bar {
-    background-color: $white !important;
-    border-bottom: 1px solid $light-gray;
+    background-color: #efefff !important;
     margin-bottom: 1.3em;
-    padding-left: 1em;
-    padding-right: 1em;
+    border-bottom: 1px solid $my-gray; //$light-gray;
 }
 
+.top-bar ul {
+    padding-left: 1em;
+    padding-top: .3em;
+    background-color: #efefff !important;
+}
+
+tr {
+    border-bottom: 1px solid $my-gray !important; //$light-gray;
+}
+
+thead tr {
+    border-bottom: 2px solid $my-gray !important; //$light-gray;
+}
+
+
 html {
-    font-size: 85% !important;
+    font-size: 90% !important;
 }

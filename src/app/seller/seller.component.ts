@@ -40,6 +40,7 @@ export class SellerComponent implements OnInit {
     setStyle(index: number) : object {
         if (index == 0) return {'color' : 'red' }
         if (index == 1) return {'color' : 'green' }
+        return {}
     }
 
     setButton(item: DataRecord) : any {

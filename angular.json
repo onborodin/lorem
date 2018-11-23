@@ -22,6 +22,7 @@
             "assets": [
                 { "glob": "favicon.ico", "input": "src/assets", "output": "/" },
                 { "glob": "fou*", "input": "src/assets", "output": "/" },
+
             ],
             "styles": [
                 { "input": "src/styles.scss", "bundleName": "styles" },

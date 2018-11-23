@@ -91,7 +91,7 @@ $global-padding: 0.5rem;
 $global-position: 0.7rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 3px;
+$global-radius: 0px;
 $global-menu-padding: 0.7rem 0.5rem;
 $global-menu-nested-margin: 0.5rem;
 $global-text-direction: ltr;
@@ -291,7 +291,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 
 $button-font-family: inherit;
 $button-padding: 0.75em 0.9em;
-$button-margin: 0 0 $global-margin 0;
+$button-margin: 0 0 0 0;//0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
