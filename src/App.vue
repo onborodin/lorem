@@ -6,7 +6,7 @@
                 <div class="top-bar">
                     <div class="top-bar-left">
                         <ul class="menu">
-                            <li class="menu-text"></i>Expresso</li>
+                            <li class="menu-text">Expresso</li>
                             <li><router-link to="/users">Users</router-link></li>
                             <li><router-link to="/lorem">Lorem</router-link></li>
                         </ul>

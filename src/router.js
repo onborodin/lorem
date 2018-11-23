@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Users from './Users.vue'
-import NotFound from './NotFound.vue'
-import Lorem from './Lorem.vue'
+import Users from '@/Users.vue'
+import NotFound from '@/NotFound.vue'
+import Lorem from '@/Lorem.vue'
 
-import store from './store'
+import store from '@/store'
 
 Vue.use(Router)
 

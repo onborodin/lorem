@@ -11,6 +11,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin")
 const WriteFilePlugin = require('write-file-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const currentDir = path.resolve(__dirname)
 const srcDir = currentDir + '/src'
@@ -192,7 +193,8 @@ module.exports = {
              clearConsole: false
         }),
         new DuplicatePackageCheckerPlugin(),
-        new WriteFilePlugin()
+        new WriteFilePlugin(),
+        new CleanWebpackPlugin(outputDir)
     ],
     performance: {
         maxAssetSize: 1 * 1024 * 1024,
