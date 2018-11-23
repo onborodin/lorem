@@ -11,8 +11,8 @@
       "schematics": {},
       "architect": {
         "build": {
-          //"builder": "@angular-devkit/build-angular:browser",
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
+          //"builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/",
             "index": "src/index.html",
@@ -21,7 +21,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
                 { "glob": "favicon.ico", "input": "src/assets", "output": "/" },
-                { "glob": "fou*", "input": "src/assets", "output": "/" },
+                { "glob": "foundation-icons.css", "input": "src/assets/", "output": "/" },
+                { "glob": "foundation-icons.eot", "input": "src/assets/", "output": "/" },
+                { "glob": "foundation-icons.html", "input": "src/assets/", "output": "/" },
+                { "glob": "foundation-icons.svg", "input": "src/assets/", "output": "/" },
+                { "glob": "foundation-icons.ttf", "input": "src/assets/", "output": "/" },
+                { "glob": "foundation-icons.woff", "input": "src/assets/", "output": "/" }
             ],
             "styles": [
                 { "input": "src/styles.scss", "bundleName": "styles" },
