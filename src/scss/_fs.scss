@@ -91,7 +91,8 @@ $global-padding: 0.5rem;
 $global-position: 0.7rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 3px;
+$global-radius: 0px;
+
 $global-menu-padding: 0.7rem 0.5rem;
 $global-menu-nested-margin: 0.5rem;
 $global-text-direction: ltr;
@@ -291,7 +292,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 
 $button-font-family: inherit;
 $button-padding: 0.75em 0.9em;
-$button-margin: 0 0 $global-margin 0;
+$button-margin: 0 0 0 0; //0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
@@ -855,7 +856,7 @@ $tooltip-radius: $global-radius;
 // 55. Top Bar
 // -----------
 
-$topbar-padding: 0.3rem;
+$topbar-padding: 0rem;
 $topbar-background: $light-gray;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.3rem 0.5rem 0.3rem 0rem;

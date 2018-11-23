@@ -1,11 +1,11 @@
 
-import '@/app.scss'
+import './app.scss'
 
 import Vue from 'vue'
-import App from '@/App.vue'
+import App from './App.vue'
 
-import router from '@/router'
-import store from '@/store'
+import router from './router'
+import store from './store'
 
 
 const app = new Vue({
@@ -18,7 +18,6 @@ const app = new Vue({
     components: { App }
 })
 
-import foundation from '@/foundation'
+import foundation from './foundation'
 
 foundation(document)
-

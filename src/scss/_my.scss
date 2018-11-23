@@ -1,11 +1,38 @@
 $topbar-background: $white;
 
-.top-bar {
-    background-color: $white !important;
-    border-bottom: 1px solid $light-gray;
-    margin-bottom: 1.3em;
-    padding-left: 1em;
-    padding-right: 1em;
+
+.menu-icon-2 {
+    @include hamburger($color: black, $color-hover: $white);
+    margin-right: 0.5em;
 }
 
+
+
+$my-gray: #aaaaaa;
+
+.top-bar {
+    background-color: #efefff !important;
+    margin-bottom: 1.3em;
+    border-bottom: 1px solid $my-gray; //$light-gray;
+}
+
+.top-bar ul {
+    padding-left: 1em;
+    padding-top: .3em;
+    //background-color: #efefff !important;
+    background-color: inherit !important;
+}
+
+tr {
+    border-bottom: 1px solid $my-gray !important; //$light-gray;
+}
+
+thead tr {
+    border-bottom: 2px solid $my-gray !important; //$light-gray;
+}
+
+
+html {
+    font-size: 90% !important;
+}
 

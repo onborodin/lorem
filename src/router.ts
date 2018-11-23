@@ -9,7 +9,7 @@ import store from './store'
 
 Vue.use(Router)
 
-var router = new Router({
+var router  = new Router({
     mode: 'history',
     routes: [
         {

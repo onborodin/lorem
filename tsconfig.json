@@ -6,8 +6,7 @@
         "moduleResolution": "node",
         "target": "es5",
         "experimentalDecorators": true,
-        "experimentalDecorators": true,
-        "allowJs": true,
+        //"allowJs": true,
         "strictPropertyInitialization": false,
     },
     "include": [

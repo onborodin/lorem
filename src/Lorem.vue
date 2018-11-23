@@ -48,19 +48,19 @@
 
 </template>
 
-<script>
+<script lang="ts">
+
 import { mapState, mapGetters, mapActions } from 'vuex'
-import foundation from '@/foundation'
+import foundation from './foundation'
 
+import { Vue, Component, Prop } from "vue-property-decorator"
 
-export default {
-    data: function() {
-        return {}
-    },
-    methods: {},
-    mounted: function() {
-        //$('#lorem').foundation()
+@Component
+export default class Lorem extends Vue {
+
+    mounted() {
         foundation('#lorem')
+        console.log('Lorem mounted')
     }
 }
 </script>
