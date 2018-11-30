@@ -1,7 +1,11 @@
 */**/*.vue linguist-language=Typescript
 */**/*.js linguist-language=Typescript
 */**/*.ts linguist-language=Typescript
+*.vue linguist-language=Typescript
+*.js linguist-language=Typescript
+*.ts linguist-language=Typescript
 *.html linguist-vendored
 *.css linguist-vendored
 */**/*.html linguist-vendored
 */**/*.css linguist-vendored
+*/**/dist/* linguist-vendored
