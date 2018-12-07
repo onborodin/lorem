@@ -16,7 +16,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const currentDir = path.resolve(__dirname)
 const srcDir = currentDir + '/src'
 
-const entryFile = srcDir + '/app.js'
+const entryFile = srcDir + '/main.ts'
 const outputDir = currentDir + '/dist'
 
 const jsDir = outputDir
@@ -26,7 +26,7 @@ module.exports = {
     //mode: 'production',
     mode: 'development',
     entry: entryFile,
-    cache: true,
+    cache: false,
     devtool: 'source-map',
     output: {
         path: jsDir,
@@ -65,8 +65,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.ts'],
         alias: {
-            //'vue$': 'vue/dist/vue.common.js',
             'vue$': 'vue/dist/vue.esm.js',
+            'jquery': 'jquery/dist/jquery.slim.js',
             '@': srcDir
         }
     },
@@ -132,10 +132,11 @@ module.exports = {
         compress: true,
         port: 8100,
         open: true,
+        inline: true,
+        //watch: true,
         watchOptions: {
             ignored: /node_modules/
         },
-        inline: true,
         stats: {
             assets: true,
             builtAt: false,
@@ -177,11 +178,6 @@ module.exports = {
             filename: outputDir + '/index.html',
             template: srcDir + '/index.html',
             alwaysWriteToDisk: true
-        }),
-        new webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery',
-            'window.jQuery': 'jquery',
         }),
         new MiniCssExtractPlugin({
             filename: "app.css",

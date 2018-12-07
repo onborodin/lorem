@@ -1,0 +1,42 @@
+<div id="lorem" class="grid-container">
+    <div class="grid-x grid-margin-x align-center">
+        <div class="cell medium-8">
+
+            <div class="button margin-bottom-2" v-on:click="onCall()">{{ buttonText }}</div>
+
+            <transition name="slide-fade">
+
+                <div v-if="currentCustomer.phone">
+
+                    <h5>Call from customer {{ currentCustomer.phone }}</h5>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Id</td>
+                                <td>{{ currentCustomer.id }}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{ currentCustomer.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>{{ currentCustomer.address }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>{{ currentCustomer.total }} USD</td>
+                            </tr>
+                            <tr>
+                                <td>Last order</td>
+                                <td>{{ currentCustomer.lastOrder }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </transition>
+
+    </div>
+</div>
+</div>
